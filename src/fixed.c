@@ -24,8 +24,16 @@ static void *create(int nthreads)
     /* TODO: allocate it, initialise everything, and return it. Anything a
      *       thread might lock or wait on has to be ready BEFORE the first
      *       thread can reach it. */
+     bar_t *b = malloc(sizeof(*b));
+    b->nthreads = nthreads;
+    b->count = 0;
+
+    pthread_mutex_init(&b->m, NULL);
+    pthread_cond_init(&b->c, NULL);
+
+    return b;
     (void)nthreads;
-    return NULL;
+    
 }
 
 static void wait_(void *p)
@@ -33,13 +41,33 @@ static void wait_(void *p)
     /* TODO: the barrier. Write the invariant you are keeping in a comment
      *       above it, in one line, before you write the code -- your report
      *       and your oral both ask you to state it. */
-    (void)p;
+     bar_t *b = p;
+
+    pthread_mutex_lock(&b->m);
+
+    b->count++;
+
+    if (b->count == b->nthreads) {
+        /* Last thread:*/
+        b->count = 0;
+        pthread_cond_broadcast(&b->c);
+    } else {
+        /* Not last: */
+        while (b->count != 0)
+            pthread_cond_wait(&b->c, &b->m);
+    }
+
+    pthread_mutex_unlock(&b->m);
 }
+    (void)p;
+
 
 static void destroy(void *p)
 {
     /* TODO: release what create() took. Every thread has been joined by the
      *       time this is called. */
+     bar_t*b=p
+     
     (void)p;
 }
 
