@@ -68,8 +68,8 @@ REPLACE THIS LINE
 > Two or three sentences, your own words: someone who has not seen this code
 > asks *what was wrong with it, and what did fixing it cost?*
 
-REPLACE THIS LINE
+What was wrong with this code is that it was trying to run a process and expected the barrier to catch up with all the threads but instead the barrier wasnt initialized well so only 1 thread was caught.
 
 ## Anything you got stuck on
 
-Optional. One or two lines.
+Prelab was confusing and so was understanding setup for this lab.
