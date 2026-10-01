@@ -1,15 +1,15 @@
 # Lab 2 results — sealed core
 
-Name:  REPLACE THIS LINE
-Student number:  REPLACE THIS LINE
-Lab section:  REPLACE THIS LINE
-Core:  REPLACE THIS LINE — the letter on BRIEF.md
-Machine:  REPLACE THIS LINE
-Cores:  REPLACE THIS LINE — an integer
+Name:  Tanay Desai
+Student number:  76319540
+Lab section:  L2 Thursday 2-4
+Core:  — B
+Machine:  Hp Victus
+Cores: 12
 
 ## Tools and sources
 
-Tools and sources: REPLACE THIS LINE
+Tools and sources: Used class notes on lecture 6 pacheco 4.7 and some other parts of textbook, previewed portions of prelab and learned more thru semaphores on google. Used Gemini AI and copilot to learn BEFORE lab not during.
 
 > Mandatory, even if it says "none". **No AI in the lab, at all** — see the
 > README. Missing declaration: zero until you supply one. False one: misconduct.
@@ -25,11 +25,13 @@ Three or more runs of `./bar given`, including one thread:
 what is actually happening? State the barrier's invariant and say which half of
 it this code does not keep.
 
-REPLACE THIS LINE
+In line 17 in given.c , not every threads is released due to POSIX rules. pthread_cond_signal() doesnt wake all waiting threads, only one at a time. Most of the statement seems correct but this part is vague
 
 **S2.2** Prove it, in the form your `BRIEF.md` requires.
 
-REPLACE THIS LINE
+(1)It's correct at 2 threads because they both use the barrier but it resets the counter after last thread
+(2) My prediction was 1 thread
+(3) cpu usage is very low almost near 0, this means threads are stopped and requires waiters 
 
 **S2.3** Minimality: what breaks if you do less, what it costs if you do more.
 

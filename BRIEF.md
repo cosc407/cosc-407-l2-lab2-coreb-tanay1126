@@ -34,7 +34,7 @@ correct. What it costs is a measurement, not an opinion.
 - **S2.2 proof.** An argument, not a timing table, and it has three parts. (1)
   It is **correct at two threads** — say why, exactly, and why that makes "I
   tested it" worthless here. (2) The smallest number of threads at which it
-  stops, predicted before you run it and then run. (3) `cpu` on the run that
+  stops, predicted before you run it and then run.  (3) `cpu` on the run that
   stops: state what the threads are doing and how you know from that one
   number.
 - **S2.3 minimality.** Your fix is one word. Prove that it is *sufficient*:
