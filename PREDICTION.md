@@ -12,7 +12,7 @@ Lab 0 spread:  27.4%
 > **P1.** `./bar given` on **one** thread — does it come out right? Yes/no, one
 > sentence why.
 
-Yes as it shares the same virtual address.
+Yes, as it shares the same virtual address.
 
 > **P2.** On **8** threads, pick one and commit to it: right answer / wrong
 > answer / it stops. If wrong, roughly how big is `bad`? If it stops, say at

@@ -47,21 +47,32 @@ mode stops, `all` stops with it — run the modes one at a time and paste those.
 
 | threads | given: correct? | given: time | given: cpu | fixed: time | fixed: cpu | alt: time | alt: cpu |
 |---|---|---|---|---|---|---|---|
-| 1 | | | | | | | |
-| 2 | | | | | | | |
-| 4 | | | | | | | |
-| 8 | | | | | | | |
+| 1 | yes| 0.0033 | 0.0035 | | | | |
+| 2 |yes | 0.3501 | 0.2768 | | | | |
+| 4 | no | 0.0137 | 0.0146 | | | | |
+| 8 | no | 5.1204 | 0.0140 | | | | |
 
 **S3.1** Reconcile with `PREDICTION.md`: quote what you predicted, say what
 happened, account for the difference. If you were right, say what would have
 made you wrong.
 
-REPLACE THIS LINE
+P1 -"Yes, as it shares the same virtual address."
+
+i predicted it would be correct but not necessarily sure whether it was because of virtual address
+
+P2- "It stops halfway"
+
+i was relatively close but not accurate to the answer here as a deadlock happens
+
+mode=given threads=8 rounds=2000 bad=-1 firstbad=-1 checksum=unknown correct=no deadlock=yes time=5.1204 cpu=0.0140
+given: no progress after 5.1 s -- giving up.
+
+
 
 **S3.2** Which would you ship on this machine, **and what measurement would
 change your mind?**
 
-REPLACE THIS LINE
+Ship 1 thread as its fastest and most efficient, ship 8 if there was no deadlock occurence
 
 ## S4 — explain-back · 15 marks
 
